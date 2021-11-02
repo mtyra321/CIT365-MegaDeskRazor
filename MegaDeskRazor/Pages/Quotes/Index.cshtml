@@ -1,0 +1,84 @@
+﻿@page
+@model MegaDeskRazor.Pages.Quotes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].TotalCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].SurfaceAreaPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].ShippingPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].DrawerPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].MaterialPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].ProductionTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.DeskQuote) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SurfaceAreaPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShippingPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DrawerPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaterialPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductionTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desk.DeskId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.DeskQuoteId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.DeskQuoteId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.DeskQuoteId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,73 @@
+﻿@page
+@model MegaDeskRazor.Pages.Quotes.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>DeskQuote</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.DeskId" class="control-label"></label>
+                <select asp-for="DeskQuote.DeskId" class ="form-control" asp-items="ViewBag.DeskId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.CustomerName" class="control-label"></label>
+                <input asp-for="DeskQuote.CustomerName" class="form-control" />
+                <span asp-validation-for="DeskQuote.CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.Date" class="control-label"></label>
+                <input asp-for="DeskQuote.Date" class="form-control" />
+                <span asp-validation-for="DeskQuote.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.TotalCost" class="control-label"></label>
+                <input asp-for="DeskQuote.TotalCost" class="form-control" />
+                <span asp-validation-for="DeskQuote.TotalCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.SurfaceAreaPrice" class="control-label"></label>
+                <input asp-for="DeskQuote.SurfaceAreaPrice" class="form-control" />
+                <span asp-validation-for="DeskQuote.SurfaceAreaPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.ShippingPrice" class="control-label"></label>
+                <input asp-for="DeskQuote.ShippingPrice" class="form-control" />
+                <span asp-validation-for="DeskQuote.ShippingPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.DrawerPrice" class="control-label"></label>
+                <input asp-for="DeskQuote.DrawerPrice" class="form-control" />
+                <span asp-validation-for="DeskQuote.DrawerPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.MaterialPrice" class="control-label"></label>
+                <input asp-for="DeskQuote.MaterialPrice" class="form-control" />
+                <span asp-validation-for="DeskQuote.MaterialPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.ProductionTime" class="control-label"></label>
+                <input asp-for="DeskQuote.ProductionTime" class="form-control" />
+                <span asp-validation-for="DeskQuote.ProductionTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
