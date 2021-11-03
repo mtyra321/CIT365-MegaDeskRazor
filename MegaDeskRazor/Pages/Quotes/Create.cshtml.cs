@@ -31,12 +31,26 @@ namespace MegaDeskRazor.Pages.Quotes
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) 
             {
                 return Page();
             }
+            int width = Convert.ToInt32(Request.Form["width"]);
+            int depth = Convert.ToInt32(Request.Form["depth"]);
+            int drawerNum = Convert.ToInt32(Request.Form["drawernum"]);
+
+            String surfaceMaterial = Request.Form["surfaceMaterial"];
+            DeskQuote.Date = DateTime.Now;
+            DeskQuote.Desk = new Desk(width, depth, drawerNum, surfaceMaterial);
+            DeskQuote.calcPrice();
+           // int width, int depth, int drawerNum, string surfaceMaterial
+            
+            
+            
+            _context.Desk.Add(DeskQuote.Desk);
 
             _context.DeskQuote.Add(DeskQuote);
+
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

@@ -11,49 +11,37 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        <form method="post"> 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
             <div class="form-group">
-                <label asp-for="DeskQuote.DeskId" class="control-label"></label>
-                <select asp-for="DeskQuote.DeskId" class ="form-control" asp-items="ViewBag.DeskId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.CustomerName" class="control-label"></label>
+                <label asp-for="DeskQuote.CustomerName" class="control-label">Customer Name</label>
                 <input asp-for="DeskQuote.CustomerName" class="form-control" />
                 <span asp-validation-for="DeskQuote.CustomerName" class="text-danger"></span>
             </div>
+            
             <div class="form-group">
-                <label asp-for="DeskQuote.Date" class="control-label"></label>
-                <input asp-for="DeskQuote.Date" class="form-control" />
-                <span asp-validation-for="DeskQuote.Date" class="text-danger"></span>
+                <label asp-for="DeskQuote.Desk.DrawerNum" class="control-label">Number of Drawers</label>
+                <input asp-for="DeskQuote.Desk.DrawerNum" class="form-control" name="drawernum"/>
+                <span asp-validation-for="DeskQuote.Desk.DrawerNum" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeskQuote.TotalCost" class="control-label"></label>
-                <input asp-for="DeskQuote.TotalCost" class="form-control" />
-                <span asp-validation-for="DeskQuote.TotalCost" class="text-danger"></span>
+                <label asp-for="DeskQuote.Desk.Width" class="control-label">Desk Width</label>
+                <input asp-for="DeskQuote.Desk.Width" class="form-control" name="width" />
+                <span asp-validation-for="DeskQuote.Desk.Width" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeskQuote.SurfaceAreaPrice" class="control-label"></label>
-                <input asp-for="DeskQuote.SurfaceAreaPrice" class="form-control" />
-                <span asp-validation-for="DeskQuote.SurfaceAreaPrice" class="text-danger"></span>
+                <label asp-for="DeskQuote.Desk.Depth" class="control-label">Desk Depth</label>
+                <input asp-for="DeskQuote.Desk.Depth" class="form-control" name="depth"/>
+                <span asp-validation-for="DeskQuote.Desk.Depth" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeskQuote.ShippingPrice" class="control-label"></label>
-                <input asp-for="DeskQuote.ShippingPrice" class="form-control" />
-                <span asp-validation-for="DeskQuote.ShippingPrice" class="text-danger"></span>
+                <label asp-for="DeskQuote.Desk.SurfaceMaterial" class="control-label">Surface Material</label>
+                <input asp-for="DeskQuote.Desk.SurfaceMaterial" class="form-control" name="surfaceMaterial"/>
+                <span asp-validation-for="DeskQuote.Desk.SurfaceMaterial" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeskQuote.DrawerPrice" class="control-label"></label>
-                <input asp-for="DeskQuote.DrawerPrice" class="form-control" />
-                <span asp-validation-for="DeskQuote.DrawerPrice" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.MaterialPrice" class="control-label"></label>
-                <input asp-for="DeskQuote.MaterialPrice" class="form-control" />
-                <span asp-validation-for="DeskQuote.MaterialPrice" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.ProductionTime" class="control-label"></label>
+                <label asp-for="DeskQuote.ProductionTime" class="control-label">Shipping Time</label>
                 <input asp-for="DeskQuote.ProductionTime" class="form-control" />
                 <span asp-validation-for="DeskQuote.ProductionTime" class="text-danger"></span>
             </div>

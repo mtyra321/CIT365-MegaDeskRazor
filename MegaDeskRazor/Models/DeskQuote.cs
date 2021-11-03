@@ -19,7 +19,6 @@ namespace MegaDeskRazor.Models
             { "Rosewood", 300 },
             { "Veneer", 125 },
         };
-
         public int DeskQuoteId { get; set; }
 
         //[ForeignKey("DeskId")]
@@ -60,52 +59,49 @@ namespace MegaDeskRazor.Models
 
         private int calcShippingPrice()
         {
-            string[] pricesString = File.ReadAllLines(@"rushOrder.txt", Encoding.UTF8);
-            int[] shippingPricesList = new int[pricesString.Length];
-            for (int i = 0; i < pricesString.Length; i++)
-                shippingPricesList[i] = Convert.ToInt32(pricesString[i]);
+            
 
             switch (ProductionTime)
             {
                 case 3:
                     if(Desk.SurfaceArea < 1000)
                     {
-                        return shippingPricesList[0];
+                        return 60;
                     }
                     else if (Desk.SurfaceArea < 2000)
                     {
-                        return shippingPricesList[1];
+                        return 70;
                     }
                     else
                     {
-                        return shippingPricesList[2];
+                        return 80;
                     }
                 case 5:
                     if (Desk.SurfaceArea < 1000)
                     {
-                        return shippingPricesList[3];
+                        return 40;
                     }
                     else if (Desk.SurfaceArea < 2000)
                     {
-                        return shippingPricesList[4];
+                        return 50;
                     }
                     else
                     {
-                        return shippingPricesList[5];
+                        return 60;
                     }
 
                 case 7:
                     if (Desk.SurfaceArea < 1000)
                     {
-                        return shippingPricesList[6];
+                        return 30;
                     }
                     else if (Desk.SurfaceArea < 2000)
                     {
-                        return shippingPricesList[7];
+                        return 35;
                     }
                     else
                     {
-                        return shippingPricesList[8];
+                        return 40;
                     }
                 default:
                     return 0;
@@ -115,6 +111,9 @@ namespace MegaDeskRazor.Models
         public void calcPrice()
         {
              ShippingPrice= calcShippingPrice();
+            int materialPrice = 0;
+            materials.TryGetValue(Desk.SurfaceMaterial, out materialPrice);
+            MaterialPrice = materialPrice;
             DrawerPrice = (50* Desk.DrawerNum);
             if(Desk.SurfaceArea > 1000)
             {

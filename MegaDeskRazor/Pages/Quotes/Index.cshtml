@@ -38,7 +38,7 @@
                 @Html.DisplayNameFor(model => model.DeskQuote[0].ProductionTime)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk)
+                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.SurfaceMaterial)
             </th>
             <th></th>
         </tr>
@@ -71,7 +71,7 @@
                 @Html.DisplayFor(modelItem => item.ProductionTime)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Desk.DeskId)
+                @Html.DisplayFor(modelItem => item.Desk.SurfaceMaterial)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.DeskQuoteId">Edit</a> |

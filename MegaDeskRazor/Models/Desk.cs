@@ -17,10 +17,18 @@ namespace MegaDeskRazor.Models
             this.Depth = depth;
             this.DrawerNum = drawerNum;
             this.SurfaceMaterial = surfaceMaterial;
-            SurfaceArea = width * depth;
+            this.SurfaceArea = width * depth;
           
-        } 
+        }
+        public Desk()
+        {
+            this.Width = 0;
+            this.Depth = 0;
+            this.DrawerNum = 0;
+            this.SurfaceMaterial = "Oak";
+            SurfaceArea = Width * Depth;
 
+        }
         [Key]
         public int DeskId { get; set; }
 

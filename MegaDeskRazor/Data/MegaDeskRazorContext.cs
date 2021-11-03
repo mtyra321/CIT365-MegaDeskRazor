@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using MegaDeskRazor.Models;
 
 namespace MegaDeskRazor.Data
-{
+{ 
     public class MegaDeskRazorContext : DbContext
     {
         public MegaDeskRazorContext (DbContextOptions<MegaDeskRazorContext> options)
@@ -15,5 +15,7 @@ namespace MegaDeskRazor.Data
         }
 
         public DbSet<MegaDeskRazor.Models.DeskQuote> DeskQuote { get; set; }
+        public DbSet<MegaDeskRazor.Models.Desk> Desk { get; set; }
+
     }
 }
