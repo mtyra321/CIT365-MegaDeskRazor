@@ -23,32 +23,30 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].CustomerName)
+                Customer Name
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DeskQuote[0].Date)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].TotalCost)
+                Total Cost
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].SurfaceAreaPrice)
+                Width
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].ShippingPrice)
+                Depth
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].DrawerPrice)
+                Number of Drawers
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].MaterialPrice)
+                Surface Material
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].ProductionTime)
+                Shipping Time
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.SurfaceMaterial)
-            </th>
+           
             <th></th>
         </tr>
     </thead>
@@ -65,23 +63,21 @@
                 @Html.DisplayFor(modelItem => item.TotalCost)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SurfaceAreaPrice)
+                @Html.DisplayFor(modelItem => item.Desk.Width)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ShippingPrice)
+                @Html.DisplayFor(modelItem => item.Desk.Depth)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DrawerPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaterialPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductionTime)
+                @Html.DisplayFor(modelItem => item.Desk.DrawerNum)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Desk.SurfaceMaterial)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductionTime) days
+            </td>
+           
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.DeskQuoteId">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.DeskQuoteId">Details</a> |

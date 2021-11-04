@@ -38,9 +38,11 @@ namespace MegaDeskRazor.Pages.Quotes
             int width = Convert.ToInt32(Request.Form["width"]);
             int depth = Convert.ToInt32(Request.Form["depth"]);
             int drawerNum = Convert.ToInt32(Request.Form["drawernum"]);
+            int productionTime = Convert.ToInt32(Request.Form["productionTime"]);
 
             String surfaceMaterial = Request.Form["surfaceMaterial"];
             DeskQuote.Date = DateTime.Now;
+            DeskQuote.ProductionTime = productionTime;
             DeskQuote.Desk = new Desk(width, depth, drawerNum, surfaceMaterial);
             DeskQuote.calcPrice();
            // int width, int depth, int drawerNum, string surfaceMaterial
