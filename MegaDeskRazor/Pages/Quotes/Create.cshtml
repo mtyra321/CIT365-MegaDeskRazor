@@ -22,27 +22,39 @@
             
             <div class="form-group">
                 <label asp-for="DeskQuote.Desk.DrawerNum" class="control-label">Number of Drawers</label>
-                <input asp-for="DeskQuote.Desk.DrawerNum" class="form-control" name="drawernum"/>
+                <input asp-for="DeskQuote.Desk.DrawerNum" class="form-control" name="drawernum" min="0" max="7"/>
                 <span asp-validation-for="DeskQuote.Desk.DrawerNum" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.Desk.Width" class="control-label">Desk Width</label>
-                <input asp-for="DeskQuote.Desk.Width" class="form-control" name="width" />
+                <input asp-for="DeskQuote.Desk.Width" class="form-control" name="width" min="24" max="96" />
                 <span asp-validation-for="DeskQuote.Desk.Width" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.Desk.Depth" class="control-label">Desk Depth</label>
-                <input asp-for="DeskQuote.Desk.Depth" class="form-control" name="depth"/>
+                <input asp-for="DeskQuote.Desk.Depth" class="form-control" name="depth"  min="12" max="48"/>
                 <span asp-validation-for="DeskQuote.Desk.Depth" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.Desk.SurfaceMaterial" class="control-label">Surface Material</label>
-                <input asp-for="DeskQuote.Desk.SurfaceMaterial" class="form-control" name="surfaceMaterial"/>
+                <select asp-for="DeskQuote.Desk.SurfaceMaterial" class="form-control" name="surfaceMaterial">
+                    <option value="oak">Oak </option>
+                    <option value="laminate">Laminate </option>
+                    <option value="pine">Pine </option>
+                    <option value="rosewood">Rosewood</option>
+                    <option value="veneer">Veneer</option>
+
+                </select>
                 <span asp-validation-for="DeskQuote.Desk.SurfaceMaterial" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.ProductionTime" class="control-label">Shipping Time</label>
-                <input asp-for="DeskQuote.ProductionTime" class="form-control" />
+                <select asp-for="DeskQuote.ProductionTime" class="form-control" name="productionTime" >
+                    <option value="3">3 days</option>
+                    <option value="5">5 days</option>
+                    <option value="7">7 days</option>
+                    <option value="14">14 days</option>
+                   </select>
                 <span asp-validation-for="DeskQuote.ProductionTime" class="text-danger"></span>
             </div>
             <div class="form-group">
