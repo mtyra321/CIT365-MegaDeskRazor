@@ -113,7 +113,7 @@ namespace MegaDeskRazor.Models
              ShippingPrice= calcShippingPrice();
             int materialPrice = 0;
             materials.TryGetValue(Desk.SurfaceMaterial, out materialPrice);
-            MaterialPrice = materialPrice;
+            MaterialPrice =  materials[Desk.SurfaceMaterial];
             DrawerPrice = (50* Desk.DrawerNum);
             if(Desk.SurfaceArea > 1000)
             {
